@@ -6,7 +6,27 @@ The quick brown fox jump over the lazy dog
 
 Ho tolto del ruffo (chiara espressione del dialetto pavese)
 
+prova_20112025_Torriero
+
 
 test
 
+
+
+ciao a tutti
+
+
+
+
+
+
+=======
 Ciao!
+
+Ciao2
+
+
+ciao a tutti!
+
+
+
