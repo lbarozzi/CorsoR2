@@ -22,4 +22,5 @@ ggplot(data=dtm) + geom_point(mapping= aes(x=displ, y=hwy, color=manufacturer)) 
 
 #Lab 1
 #  show data significantly
+ggplot(data=mpg) + geom_bar(mapping=aes(x=class,fill=manufacturer, color=manufacturer))
 
