@@ -78,3 +78,8 @@ data_final <- data_clean %>%
   ) %>%
   select(Age, Sex, ChestPain, RestBP, Chol, Fbs, RestECG, 
          MaxHR, ExAng, Oldpeak, Slope, Ca, Thal, AHD)
+
+saveRDS(data_final,"heart_uci.rds")
+saveRDS(data_raw,"heart_uci_grezzo.rds")
+
+write.csv(data_final, "heart_uci.csv")
