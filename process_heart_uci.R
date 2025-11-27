@@ -76,3 +76,5 @@ plot(roc_obj, main=paste("ROC Curve AUC=", round(auc_val,3)),
 
 abline(a=0,b=1,lty=2, col="gray")
 grid()
+
+saveRDS(rf_heart,"rf_heart.rds")
