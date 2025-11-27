@@ -68,3 +68,39 @@ cor_matrix = cor(data[,1:4])
 
 cat("Matrice di correlazione")
 print(round(cor_matrix,3))
+
+library(randomForest)
+
+trainIndex <- sample(1:nrow(data), 0.8* nrow(data))
+
+trainData <- data[trainIndex,]
+testData <- data[-trainIndex,]
+
+rf_iris <- randomForest( Species ~ ., data=trainData)
+
+
+print(rf_iris)
+
+library(caret)
+
+predictions <- predict(rf_iris, testData)
+
+
+print(predictions)
+
+confusionMatrix(predictions, testData$Species)
+
+rf_tun <- randomForest( Species ~ . , data=trainData, ntree=500, mtry=2)
+
+
+predictions2 <- predict(rf_tun,testData)
+
+confusionMatrix(predictions2, testData$Species)
+
+importance(rf_iris)
+varImpPlot(rf_iris)
+
+saveRDS(rf_iris, "modello_rf_iris.rds")
+saveRDS(rf_tun,"modello_rf_iris_tuned500.rds")
+
+rf_ok <- readRDS("modello_rf_iris.rds")
